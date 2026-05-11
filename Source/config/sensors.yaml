@@ -1,0 +1,40 @@
+# Sample sensor configuration
+# Loaded by the sensor simulator (client/) at startup.
+
+server:
+  host: 127.0.0.1
+  port: 9000
+
+sensors:
+  - id: sensor-temp-01
+    type: temperature
+    interval_seconds: 5
+    location: "Greenhouse Row A"
+    range:
+      min: -10.0
+      max: 50.0
+    
+
+  - id: sensor-hum-01
+    type: humidity
+    interval_seconds: 10
+    location: "Greenhouse Row A"
+    range:
+      min: 0.0
+      max: 100.0
+
+  - id: sensor-soil-01
+    type: soil_moisture
+    interval_seconds: 15
+    location: "Field Plot B"
+    range:
+      min: 0.0
+      max: 100.0
+      
+  - id: sensor-light-01
+    type: light
+    interval_seconds: 8
+    location: "Rooftop Station"
+    range:
+      min: 0.0
+      max: 100000.0

@@ -1,0 +1,30 @@
+// telemetry.proto
+//
+// Wire format used between sensors and the telemetry server.
+// Compile with: protoc --python_out=. proto/telemetry.proto
+
+syntax = "proto3";
+
+package telemetry;
+
+enum ReadingType {
+  UNKNOWN       = 0;
+  TEMPERATURE   = 1;
+  HUMIDITY      = 2;
+  SOIL_MOISTURE = 3;
+  LIGHT         = 4;
+}
+
+message Reading {
+  string      sensor_id  = 1;
+  ReadingType type       = 2;
+  double      value      = 3;
+  int64       timestamp  = 4;
+}
+
+message SensorRegistration {
+  string      sensor_id        = 1;
+  ReadingType type             = 2;
+  double      interval_seconds = 3;
+  string      location         = 4;
+}
